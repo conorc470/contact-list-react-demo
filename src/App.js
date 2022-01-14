@@ -1,9 +1,14 @@
-import ContactCards from "./ContactCards";
-
+import React from 'react';
+import ContactCards from "./ContactCards"
+import useFetch from "react-fetch-hook"
 
 const App = () => {
+	const url = 'https://randomuser.me/api'
+	const { isLoading, data, error } = useFetch(url+'?results=200')
+	data && console.log(data)
+
   return (
-    <div className="bg-black">
+    <div className="bg-gray-100">
 			<section>
 				<form>
 					<input 
